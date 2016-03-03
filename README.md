@@ -11,6 +11,24 @@ fulldata.txt       | Full data set obtained by merging train and test data and c
 means_and_stds.txt | Subset of the full data - only means and standard deviations are included
 averages.txt       | Summary for the means and stds - average is counted for each Activity and Subject
 
+## Instructions
+1. Download files from <https://github.com/pasichnyi/CleaningWearableDataProject>
+
+2. Download the data set from <https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip>
+
+3. Unzip the data set to the same folder
+
+4. Load RStudio and set your working directory to the same folder as the downloaded files
+
+5. Run the R script
+
+```
+source('run_analysis.R')
+```
+
+6.The tidy datasets **(fulldata.txt, means_and_stds.txt and averages.txt)** will be saved to the working folder.
+
+
 ## Notes on the script
 **Run_analysis.R** aims to perform 5 steps assigned in the task:
 
