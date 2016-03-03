@@ -24,6 +24,7 @@ averages.txt       | Summary for the means and stds - average is counted for eac
 
 ```
 source('run_analysis.R')
+run_analysis()
 ```
 
 6.The tidy datasets **(fulldata.txt, means_and_stds.txt and averages.txt)** will be saved to the working folder.
@@ -49,7 +50,7 @@ Steps 1,3,4 are completed in the **create_merged_dataset** function, while steps
 
 All produced files are put to the current working directory.
 
-### Detailed workflow description
+### Cleaning workflow description
 1. Main function **run_analysis** launches the **create_merged_dataset** function. Raw data is looked for at the default **directory="UCI HAR Dataset"** if no user parameter is passed to the main function.
 2. Function subsequently reads in labels for activities and features from the top extracted directory.
 3. Function reads in subjects, activities and signals from the train and test directories.
