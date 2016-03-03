@@ -113,10 +113,10 @@ Steps 1,3,4 are completed in the **create_merged_dataset** function, while steps
 All produced files are put to the current working directory.
 
 ### Detailed workflow description
-1. Main function **run_analysis** launches the **create_merged_dataset** function. Raw data is look for at the default **directory="UCI HAR Dataset"** if no user parameter is passed to the main function.
+1. Main function **run_analysis** launches the **create_merged_dataset** function. Raw data is looked for at the default **directory="UCI HAR Dataset"** if no user parameter is passed to the main function.
 2. Function subsequently reads in labels for activities and features from the top extracted directory.
 3. Function reads in subjects, activities and signals from the train and test directories.
-4. Created dataframes are merged into one single **merged_df** dataframe, with which steps 6-9 are done.
+4. Created dataframes are merged into one single **merged_df** dataframe, with which steps 5-9 are done.
 5. Activity column is set up - values are set according to the read labels, case is lowered down.
 6. Subject column is factorised to have a proper data type for the column.
 7. The features columns are set up:
