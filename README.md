@@ -1,9 +1,3 @@
----
-title: "README"
-author: "Oleksii Pasichnyi"
-date: "3 March 2016"
-output: html_document
----
 ## Summary
 This repo is for the Course Project in the "Getting and Cleaning Data" course. It includes 3 files with tidy data (full dataset, subset of means and stds, summary with averages by activities and subjects), the R script for obtaining those from the initial dataset and this README.
 
