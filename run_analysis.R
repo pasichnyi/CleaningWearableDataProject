@@ -4,11 +4,11 @@ library(stringr)
 # General function to call perform all stages of analysis
 # Steps 1,3,4 are completed via call to the separate create_merged_dataset function
 # Steps 2 and 5 are made directly in the main function
-run_analysis<-function(dataset_url="https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"){
+run_analysis<-function(directory="UCI HAR Dataset"){
     # Merging the training and the test sets to create one data set.
     # It also uses descriptive activity names to name the activities in the data set
     # And appropriately labels the data set with descriptive variable names.
-    dataset<-create_merged_dataset(dataset_url)
+    dataset<-create_merged_dataset(directory)
     
     # Extracts only the measurements on the mean and standard deviation for each measurement.
     # That gets only means() and stds() but skips all Freqs() and Means() for angle()
@@ -21,25 +21,19 @@ run_analysis<-function(dataset_url="https://d396qusza40orc.cloudfront.net/getdat
     print("Summary with averages is created.")
     
     # Writing down obtained datasets to files
-    write.csv(dataset,"fulldata.csv",row.names = FALSE)
-    write.csv(means_and_stds,"means_and_stds.csv",row.names = FALSE)
-    write.csv(averages,"averages.csv",row.names = FALSE)
+    write.table(dataset,"fulldata.txt",row.names = FALSE)
+    write.table(means_and_stds,"means_and_stds.txt",row.names = FALSE)
+    write.table(averages,"averages.txt",row.names = FALSE)
     print("Files with tidy data are created. Finishing.")
 }
 
 
 # Merges the training and the test sets to create one data set. Tidies the obtained set up.
-create_merged_dataset<-function(dataset_url){
+create_merged_dataset<-function(directory){
 
     # Memorizing current location
     original_wd<-getwd()
-    
-    # Downloading and unzipping archive with raw_data
-    print("Downloading raw dataset from the defined url:")
-    download.file(url=dataset_url,destfile = "raw_data.zip",cacheOK = TRUE)
-    unzip("raw_data.zip")
-    
-    setwd("UCI HAR Dataset")
+    setwd(directory)
           
     # Reading common list of labels and features
     activity_labels<-read.table("activity_labels.txt")
